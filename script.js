@@ -108,7 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             button.addEventListener('click', (e) => {
-                e.preventDefault();
+                // Only prevent default for actual buttons, not links
+                if (button.tagName === 'BUTTON') {
+                    e.preventDefault();
+                }
                 
                 // Create ripple effect
                 const ripple = document.createElement('span');
