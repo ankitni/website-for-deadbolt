@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Create a temporary link element
                 const link = document.createElement('a');
-                link.href = 'asset/Deadbolt-main.zip';
+                link.href = 'Deadbolt-main.zip';
                 link.download = 'Deadbolt-main.zip';
                 
                 // Dispatch click event
