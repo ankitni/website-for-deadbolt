@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDashboard();
     initScrollAnimations();
     initParallaxEffects();
+    initDownloadButton();
     
     // Loading Screen
     function initLoadingScreen() {
@@ -465,6 +466,26 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.boxShadow = '0 10px 30px rgba(0, 255, 255, 0.2)';
         });
     });
+    
+    // Download Button Functionality
+    function initDownloadButton() {
+        const downloadBtn = document.getElementById('download-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create a temporary link element
+                const link = document.createElement('a');
+                link.href = 'asset/Deadbolt-main.zip';
+                link.download = 'Deadbolt-main.zip';
+                
+                // Dispatch click event
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+        }
+    }
     
     // Architecture Layer Animations
     const archLayers = document.querySelectorAll('.arch-layer');
